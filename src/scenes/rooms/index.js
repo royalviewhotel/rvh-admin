@@ -16,7 +16,7 @@ const Rooms = () => {
 
   useEffect(() => {
     axios
-      .get("https://rvh-backend.vercel.app/api/room/")
+      .get("https://rvh-backend-coral.vercel.app/api/room/")
       .then((result) => {
         setRoomDatas(result?.data);
       })

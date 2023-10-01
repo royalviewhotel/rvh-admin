@@ -31,7 +31,7 @@ const Booking = ({ userData }) => {
 
   const handleOpen = (bookingRef) => {
     axios
-      .post("https://rvh-backend.vercel.app/api/room/booking-details", {
+      .post("https://rvh-backend-coral.vercel.app/room/booking-details", {
         bookingRef: bookingRef,
       })
       .then((res) => setData(res.data));
@@ -106,7 +106,7 @@ const Booking = ({ userData }) => {
 
   useEffect(() => {
     axios
-      .get("https://rvh-backend.vercel.app/api/room/all-bookings")
+      .get("https://rvh-backend-coral.vercel.app/room/all-bookings")
       .then((result) => {
         setBookingData(
           result?.data?.sort((a, b) => (b.createdAt > a.createdAt ? 1 : -1))

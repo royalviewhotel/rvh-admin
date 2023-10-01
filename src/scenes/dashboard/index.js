@@ -24,7 +24,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("https://rvh-backend.vercel.app/api/room/all-bookings")
+      .get("https://rvh-backend-coral.vercel.app/room/all-bookings")
       .then((result) => {
         setBookingData(result?.data);
       })
@@ -33,7 +33,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("https://rvh-backend.vercel.app/api/room")
+      .get("https://rvh-backend-coral.vercel.app/room")
       .then((result) => {
         setRoomData(result?.data);
       })

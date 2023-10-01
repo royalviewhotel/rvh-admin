@@ -39,7 +39,7 @@ const RoomDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://rvh-backend.vercel.app/api/room/room-details/${id}`)
+      .get(`https://rvh-backend-coral.vercel.app/room/room-details/${id}`)
       .then((result) => {
         setData(result.data);
       });
@@ -47,7 +47,7 @@ const RoomDetails = () => {
 
   const refreshData = () => {
     axios
-      .get(`https://rvh-backend.vercel.app/api/room/room-details/${id}`)
+      .get(`https://rvh-backend-coral.vercel.app/room/room-details/${id}`)
       .then((result) => {
         setData(result.data);
       });
@@ -74,7 +74,7 @@ const RoomDetails = () => {
     setLoading(true);
 
     axios
-      .put(`https://rvh-backend.vercel.app/api/room/upload/${id}`, {
+      .put(`https://rvh-backend-coral.vercel.app/room/upload/${id}`, {
         photos: imgUrl,
       })
       .then((success) => {
@@ -120,7 +120,7 @@ const RoomDetails = () => {
   //   setLoading(true);
 
   //   const uploadImg = await axios.put(
-  //     `https://rvh-backend.vercel.app/api/room/upload/${id}`,
+  //     `https://rvh-backend-coral.vercel.app/room/upload/${id}`,
   //     formData
   //   );
 
@@ -130,8 +130,8 @@ const RoomDetails = () => {
   //   }
   // };
 
-  // const localUrl = "https://rvh-backend.vercel.app/api/room/";
-  const prodUrl = "https://rvh-backend.vercel.app/api/room";
+  // const localUrl = "https://rvh-backend-coral.vercel.app/room/";
+  const prodUrl = "https://rvh-backend-coral.vercel.app/room";
 
   // Adding Room Details
   const [details, setDetails] = useState("");
@@ -402,7 +402,7 @@ const RoomDetails = () => {
   // Delete Images
   const handleDeleteImg = (url) => {
     axios
-      .put(`https://rvh-backend.vercel.app/api/room/delete-image/${id}`, {
+      .put(`https://rvh-backend-coral.vercel.app/room/delete-image/${id}`, {
         url: url,
       })
       .then((success) => {
@@ -423,7 +423,7 @@ const RoomDetails = () => {
   // delete overview
   const handleDeleteOverview = (name) => {
     axios
-      .put(`https://rvh-backend.vercel.app/api/room/delete-overview/${id}`, {
+      .put(`https://rvh-backend-coral.vercel.app/room/delete-overview/${id}`, {
         name: name,
       })
       .then((success) => {
@@ -444,7 +444,7 @@ const RoomDetails = () => {
   // delete view
   const handleDeleteView = (name) => {
     axios
-      .put(`https://rvh-backend.vercel.app/api/room/delete-view/${id}`, {
+      .put(`https://rvh-backend-coral.vercel.app/room/delete-view/${id}`, {
         name: name,
       })
       .then((success) => {
@@ -465,7 +465,7 @@ const RoomDetails = () => {
   // delete bathroom
   const handleDeleteBathroom = (name) => {
     axios
-      .put(`https://rvh-backend.vercel.app/api/room/delete-bathroom/${id}`, {
+      .put(`https://rvh-backend-coral.vercel.app/room/delete-bathroom/${id}`, {
         name: name,
       })
       .then((success) => {
@@ -486,9 +486,12 @@ const RoomDetails = () => {
   // delete bathroom
   const handleDeleteFacilities = (name) => {
     axios
-      .put(`https://rvh-backend.vercel.app/api/room/delete-facilities/${id}`, {
-        name: name,
-      })
+      .put(
+        `https://rvh-backend-coral.vercel.app/room/delete-facilities/${id}`,
+        {
+          name: name,
+        }
+      )
       .then((success) => {
         toast.success(success.data.message, {
           position: "top-right",
@@ -506,9 +509,12 @@ const RoomDetails = () => {
 
   const handleAvailability = (availability) => {
     axios
-      .put(`https://rvh-backend.vercel.app/api/room/room-availability/${id}`, {
-        availability: availability,
-      })
+      .put(
+        `https://rvh-backend-coral.vercel.app/room/room-availability/${id}`,
+        {
+          availability: availability,
+        }
+      )
       .then((success) => {
         toast.success(success.data.message, {
           position: "top-right",
